@@ -2,21 +2,30 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 namespace GCook.Models;
+
+[Table("Receita")]
 public class Receita
 {
     [Key]
     public int Id { get; set; }
 
+    [Display(Name = "Categoria")]
+    [Required(ErrorMessage ="A categoria é obrigatória")]
     public int CategoriaId { get; set; }
+    [ForeignKey("CategoriaId")]
+    [Display(Name = "Categoria")]
+    public Categoria Categoria { get; set; }
 
     [StringLength(50)]
     [Required(ErrorMessage = "O nome é obrigatório")]
     public string Nome { get; set; }
 
     [StringLength(1000)]
+    [Display(Name = "Descrição")]
     public string Descricao { get; set; }
 
     [StringLength(30)]
+    [Display(Name = "Tempo de preparo")]
     public string TempoPreparo { get; set; }
 
     public int Rendimento { get; set; }
@@ -27,6 +36,8 @@ public class Receita
     public string Foto { get; set; }
 
     [StringLength(8000)]
+    [Display(Name = "Modo de Preparo")]
+    [Required(ErrorMessage ="O modo de preparo é obrigatório")]
     public string Preparo { get; set; }
 }
 

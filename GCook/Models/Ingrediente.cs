@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace GCook.Models;
 
+[Table("Ingrediente")]
 public class Ingrediente
 {
     [Key]
