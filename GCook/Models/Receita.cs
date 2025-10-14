@@ -1,4 +1,3 @@
-using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 namespace GCook.Models;
@@ -39,5 +38,7 @@ public class Receita
     [Display(Name = "Modo de Preparo")]
     [Required(ErrorMessage ="O modo de preparo é obrigatório")]
     public string Preparo { get; set; }
+
+    public List<ReceitaIngrediente> Ingredientes { get; set; }
 }
 
