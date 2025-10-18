@@ -17,5 +17,5 @@ public class Categoria
     public string Foto { get; set; }
 
     [Display(Name = "Deseja exibir na página inicial?")]
-    public bool ExibirHome { get; set; }
+    public bool ExibirHome { get; set; } = false;
 }
